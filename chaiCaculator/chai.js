@@ -1,7 +1,7 @@
 function calculateChaiIngredients(numberOfCups) {
   // Check if the input is a valid number
   if (isNaN(numberOfCups) || numberOfCups <= 0) {
-    console.log("Please enter a valid number of cups (a positive number).");
+    console.log(" enter the number of chai cups you want to make ");
     return; // Exit the function if input is invalid
   }
 
