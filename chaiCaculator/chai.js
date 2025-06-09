@@ -30,7 +30,7 @@ function calculateChaiIngredients(numberOfCups) {
 console.log("Making 3 cups of Chai");
 calculateChaiIngredients(3);
 
-console.log("\n--- Making 1 cup of Chai ---");
+console.log("Making 1 cup of Chai ");
 calculateChaiIngredients(1);
 
 console.log("Testing invalid input");
