@@ -1,5 +1,5 @@
 function calculateBodaFare(distanceInKm) {
-    if (distanceInKm <= 0) {
+    if (isNaN(distanceInKm) || distanceInKm <= 0) {
         console.log("enter the distance of your trip in kilometers")
     }
     const baseFare = 50 ; //KES per ride
