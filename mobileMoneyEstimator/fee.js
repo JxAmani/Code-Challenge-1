@@ -1,26 +1,37 @@
-function estimateTransactionFee(amountToSend) {
-  const percentageFeeRate = 0.015; // 1.5% as a decimal
-  const maximumFee = 70; // KES
-  const minimumFee = 10; // KES
+function estimateTransactionFee() {
+  const amountToSendInput = prompt("Unatuma Ngapi? (KES):");
+  const amountToSend = parseFloat(amountToSendInput);//input into a number
+
+  const percentageFeeRate = 0.015;
+  const maximumFee = 70;
+  const minimumFee = 10;
+
+  if (isNaN(amountToSend) || amountToSend <= 0) {
+    alert("Invalid amount. Please enter a number above 0.");
+    return;
+  }
 
   let transactionFee = amountToSend * percentageFeeRate;
 
   if (transactionFee < minimumFee) {
     transactionFee = minimumFee;
-    alert="This is the minimum transaction fee";
   } else if (transactionFee > maximumFee) {
     transactionFee = maximumFee;
-    alert="This is the maximum transaction fee";
-  } 
+  }
+
   const totalAmountToBeDebited = amountToSend + transactionFee;
+
   
-  // Print the results
   console.log(`Sending KES ${amountToSend}`);
-  console.log(`Caculated Transaction Fee: KES${transactionFee}`);
-  console.log(`Total amount to be debited KES${totalAmountToBeDebited}`);
+  console.log(`Calculated  Transaction Fee: KES ${transactionFee}`);
+  console.log(`Total amount to be debited: KES ${totalAmountToBeDebited}`);
+  console.log("Send money Securely");
 
+  // Added alert cause i like the idea of the user seeing the result instantly
+  alert(`Sending KES ${amountToSend}:
+  Calculated Transaction Fee: KES ${transactionFee}
+  Total amount to be debited: KES ${totalAmountToBeDebited}
 
-  console.log(`Send Money securely!`);
-};
-console.log("Testing KES100 as amount yo send")
-estimateTransactionFee(100)//KES
+ Send Money Securely!`);
+ 
+}
