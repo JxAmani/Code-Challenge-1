@@ -1,4 +1,7 @@
-function calculateBodaFare(distanceInKm) {
+function calculateBodaFare() {
+    const distanceInKmInput = prompt("Enter the distance of your trip in kilometers");
+    const distanceInKm = parseFloat(distanceInKmInput);// input to a number
+
     if (isNaN(distanceInKm) || distanceInKm <= 0) {
         console.log("enter the distance of your trip in kilometers")
     }
@@ -7,15 +10,19 @@ function calculateBodaFare(distanceInKm) {
 
     totalFare = baseFare + (distanceInKm * chargePerKmPer)
     
-    console.log(`Uko kwote ni ${distanceInKm}`)
-    console.log(`Ukikalia Pikipiki: KES ${baseFare}`)
-    console.log(`Mpaka Uko KES ${chargePerKmPer}`)
-    console.log(`Total: KES ${totalFare}`)
+    console.log(`Uko kwote ni ${distanceInKm}
+    Ukikalia Pikipiki: KES ${baseFare}
+    Mpaka Uko KES ${chargePerKmPer}
+    Total: KES ${totalFare}
 
-    console.log(`Panda pikipiki!`)
+    Panda pikipiki!`);
+
+    //Added alert because i like the idea of the user getting output instantly
+    alert(`Uko kwote ni ${distanceInKm}
+    Ukikalia Pikipiki: KES ${baseFare}
+    Mpaka Uko KES ${chargePerKmPer}
+    Total: KES ${totalFare}
+
+    Panda pikipiki!`)
 }
-console.log("travelling 5 km");
-calculateBodaFare(5);
-
-console.log("travelling 17 km");
-calculateBodaFare(17);
+calculateBodaFare();
